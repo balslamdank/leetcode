@@ -1,0 +1,29 @@
+int myAtoi(char * s){
+    int signFlag = 0;
+    int index = 0;
+    int finalInteger = 0;
+    int nadaFlag = 0;
+    double digitArr[1];
+    for(; s[index] != '\0'; index++)
+    {
+        if(s[index] < '0' || s[index] > '9'){
+            if(s[index] == '-') {
+                signFlag = 1;
+            }
+            else if(s[index] == ' ') {;}
+            else {
+                if(index == 0){
+                    return 0;
+                }
+                
+            }
+        }
+        else{
+            finalInteger = 10* (long long) finalInteger + s[index] - '0';
+        }
+    }
+    if(signFlag){
+        finalInteger = -1* finalInteger;
+    }
+        return finalInteger;
+    }    
